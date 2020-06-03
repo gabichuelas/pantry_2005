@@ -48,8 +48,15 @@ class CookbookTest < Minitest::Test
     assert_equal ["Cheese", "Macaroni", "Ground Beef", "Bun"], @cookbook.ingredients
   end
 
+  def test_calories_by_recipe
+    @cookbook.add_recipe(@recipe1)
+    @cookbook.add_recipe(@recipe2)
+    # require "pry"; binding.pry
+    assert_instance_of Hash, @cookbook.calories_by_recipe
+    assert_equal 440, @cookbook.calories_by_recipe[@recipe1]
+  end
+
   def test_highest_calorie_meal
-    skip
     @cookbook.add_recipe(@recipe1)
     @cookbook.add_recipe(@recipe2)
     assert_equal [@recipe1, @recipe2], @cookbook.recipes
