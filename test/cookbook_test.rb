@@ -101,7 +101,7 @@ class CookbookTest < Minitest::Test
       }
     }]
 
-    # assert_equal expected, @cookbook.summary
+    assert_equal expected, @cookbook.summary
   end
 
 end
