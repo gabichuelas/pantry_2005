@@ -9,7 +9,17 @@ class Cookbook
     @recipes << recipe
   end
 
+  def ingredients
+    @recipes.reduce([]) do |ingredients, recipe|
+      ingredients << recipe
+  end
+
+  def find_ingredient_names
+    @recipes.find_all do |recipe|
+      recipe.ingredients.map 
+  end
+
   def highest_calorie_meal
-    
+
   end
 end
