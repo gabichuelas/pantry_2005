@@ -5,6 +5,11 @@ class Pantry
   end
 
   def stock_check(ingredient)
-    0
+    @stock[ingredient] ||= 0
+  end
+
+  def restock(ingredient, qty)
+    @stock[ingredient] ||= 0
+    @stock[ingredient] += qty
   end
 end
