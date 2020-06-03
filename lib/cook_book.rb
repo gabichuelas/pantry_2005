@@ -30,4 +30,20 @@ class Cookbook
     "04-22-2020"
   end
 
+  def summary
+    #put recipe_hash in an array
+
+    @recipes.reduce([]) do |acc, recipe|
+      recipe_hash = {
+        :name => recipe.name,
+        :details => {
+          :ingredients => [],
+          :total_calories => recipe.total_calories,
+        }
+      }
+      acc << recipe_hash
+      acc
+    end
+  end
+
 end
