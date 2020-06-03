@@ -26,6 +26,8 @@ class Recipe
   end
 
   def ingredient_details
+    sort_ingredients
+    # require "pry"; binding.pry
     @ingredients.reduce([]) do |acc, ingredient|
       hash = {
         :ingredient => ingredient.name,
@@ -33,6 +35,12 @@ class Recipe
       }
       acc << hash
       acc
+    end
+  end
+
+  def sort_ingredients
+    @ingredients.sort_by do |ingredient|
+      # amount in @ingredients_required
     end
   end
 
