@@ -13,4 +13,10 @@ class Recipe
     @ingredients << ingredient unless @ingredients.include?(ingredient)
   end
 
+  def total_calories
+    @ingredients.reduce(0) do |calories, ingredient|
+      calories += ingredient.calories * @ingredients_required[ingredient]
+    end
+  end
+
 end
