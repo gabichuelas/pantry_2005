@@ -37,8 +37,8 @@ class Cookbook
       recipe_hash = {
         :name => recipe.name,
         :details => {
-          :ingredients => [],
-          :total_calories => recipe.total_calories,
+          :ingredients => recipe.ingredient_details,
+          :total_calories => recipe.total_calories
         }
       }
       acc << recipe_hash

@@ -22,7 +22,18 @@ class Recipe
   def ingredient_names
     @ingredients.map do |ingredient|
       ingredient.name
-    end 
+    end
+  end
+
+  def ingredient_details
+    @ingredients.reduce([]) do |acc, ingredient|
+      hash = {
+        :ingredient => ingredient.name,
+        :amount => "#{@ingredients_required[ingredient]} #{ingredient.unit}"
+      }
+      acc << hash
+      acc
+    end
   end
 
 end
