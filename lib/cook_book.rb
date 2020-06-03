@@ -8,4 +8,8 @@ class Cookbook
   def add_recipe(recipe)
     @recipes << recipe
   end
+
+  def highest_calorie_meal
+    
+  end
 end
